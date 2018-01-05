@@ -1,0 +1,10 @@
+/.idea
+/node_modules/*
+/gulpfile.js
+/package.json
+
+*.iml
+
+
+/beertender_srv.iml
+/.idea/
