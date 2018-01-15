@@ -18,9 +18,9 @@ use Doctrine\ORM\Mapping\ManyToOne;
 
 /**
  * @Entity
- * @Table(name="app_product")
+ * @Table(name="app_productcategory")
  */
-class Product extends DomainObject
+class ProductCategory extends DomainObject
 {
     /**
      * @Column(type="String", nullable=false)
@@ -33,29 +33,14 @@ class Product extends DomainObject
      * @var String
      */
     private $desc;
-
-    /**
-     * @Column(type="string", nullable=false)
-     * @var String
-     */
-    private $price = 0;
     
-    /**
-     * @Column(type="string", nullable=true)
-     * @var String
-     */
-    private $img;
-
-
+    
 
     /**
      * Product constructor.
      */
-    public function __construct($name)
+    public function __construct()
     {
         parent::__construct();
-        $this->name = $name;
     }
-    
-    
 }

@@ -38,6 +38,16 @@ function includeWithMaintenanceControl($page){
     }
 }
 
+
+
+
+//try save here 
+$product = new model\Product("test1");
+$gDao->save($product);
+
+
+
+
 ?>
  
 
