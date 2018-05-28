@@ -13,8 +13,9 @@
 
 namespace BeerTender\model;
 
-
-use Doctrine\ORM\Mapping\ManyToOne;
+use Doctrine\ORM\Mapping\Column;
+use Doctrine\ORM\Mapping\Entity;
+use Doctrine\ORM\Mapping\Table;
 
 /**
  * @Entity
@@ -56,6 +57,72 @@ class Product extends DomainObject
         parent::__construct();
         $this->name = $name;
     }
+
+    /**
+     * @return String
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param String $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return String
+     */
+    public function getDesc()
+    {
+        return $this->desc;
+    }
+
+    /**
+     * @param String $desc
+     */
+    public function setDesc($desc)
+    {
+        $this->desc = $desc;
+    }
+
+    /**
+     * @return String
+     */
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    /**
+     * @param String $price
+     */
+    public function setPrice($price)
+    {
+        $this->price = $price;
+    }
+
+    /**
+     * @return String
+     */
+    public function getImg()
+    {
+        return $this->img;
+    }
+
+    /**
+     * @param String $img
+     */
+    public function setImg($img)
+    {
+        $this->img = $img;
+    }
+
+
     
     
 }
