@@ -13,7 +13,7 @@
       "BeerTender\\type\\": "type/",
       "BeerTender\\enum\\": "enum/",
       "BeerTender\\models\\dao\\": "models/",
-      "BeerTender\\utils": "utils/",
+      "BeerTender\\utils\\": "utils/",
       "BeerTender\\": ""
     }
   }

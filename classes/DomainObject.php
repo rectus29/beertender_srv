@@ -45,7 +45,7 @@ class DomainObject
     protected $updated;
 
     /**
-     * @Column(type="enumeState")
+     * @Column(type="enumState")
      * @var int
      */
     protected $status = State::ENABLE;

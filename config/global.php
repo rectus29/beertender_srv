@@ -43,7 +43,7 @@ require_once ROOT_DIR . "/vendor/autoload.php";
 $conn = array(
     'driver' => 'pdo_mysql',
     'host' => '127.0.0.1',
-    'user' => 'admin',
+    'user' => 'root',
     'password' => '',
     'dbname' => 'beerTender',
     'charset' => 'utf8',
@@ -51,7 +51,7 @@ $conn = array(
 
 //mailerconfig
 $mailConfig = [
-    'serversmtp' => 'SSL0.OVH.NET',
+    'serversmtp' => '127.0.0.1',
     'SMTPAuth' => true,
     'Username' => '',
     'Password' => '',
@@ -61,7 +61,7 @@ $mailConfig = [
 ];
 // obtaining the entity manager
 $config = Setup::createAnnotationMetadataConfiguration(array(__DIR__ . "/../classes/"), true);
-$em = EntityManager::create((DEV_MOD) ? $devConn : $conn, $config);
+$em = EntityManager::create($conn, $config);
 $securityMananger = SecurityManager::init($em);
 $mailManager = MailManager::init($em, $mailConfig);
 $gDao = new GenericDao($em);
