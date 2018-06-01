@@ -14,7 +14,10 @@
 namespace BeerTender\model;
 
 
-use Doctrine\ORM\Mapping\ManyToOne;
+use Doctrine\ORM\Mapping\Column;
+use Doctrine\ORM\Mapping\Entity;
+use Doctrine\ORM\Mapping\OneToMany;
+use Doctrine\ORM\Mapping\Table;
 
 /**
  * @Entity
@@ -33,8 +36,12 @@ class ProductCategory extends DomainObject
      * @var String
      */
     private $desc;
-    
-    
+
+    /**
+     * @OneToMany(targetEntity="Product", mappedBy="productCategory", )
+     * @var Product[]
+     */
+    private $products;
 
     /**
      * Product constructor.
@@ -42,5 +49,53 @@ class ProductCategory extends DomainObject
     public function __construct()
     {
         parent::__construct();
+        return $this;
     }
+
+    /**
+     * @return String
+     */
+    public function getName() {
+        return $this->name;
+    }
+
+    /**
+     * @param String $name
+     */
+    public function setName($name) {
+        $this->name = $name;
+        return $this;
+    }
+
+    /**
+     * @return String
+     */
+    public function getDesc() {
+        return $this->desc;
+    }
+
+    /**
+     * @param String $desc
+     */
+    public function setDesc($desc) {
+        $this->desc = $desc;
+        return $this;
+    }
+
+    /**
+     * @return Product[]
+     */
+    public function getProducts() {
+        return $this->products;
+    }
+
+    /**
+     * @param Product[] $products
+     */
+    public function setProducts($products) {
+        $this->products = $products;
+        return $this;
+    }
+
+
 }

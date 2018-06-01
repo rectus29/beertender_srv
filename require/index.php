@@ -30,16 +30,6 @@ if ($configDao->getByKey('serverState') != null && $configDao->getByKey('serverS
     $GLOBALS['maintenance'] = true;
 }
 
-function includeWithMaintenanceControl($page){
-    if($GLOBALS['maintenance'] && !SecurityManager::get()->isAdmin($_SESSION)){
-        return 'security/maintenance.php';
-    }else{
-        return $page;
-    }
-}
-
-
-
 
 //try save here 
 $product = new model\Product("test1");

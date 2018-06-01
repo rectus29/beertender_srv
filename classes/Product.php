@@ -13,8 +13,11 @@
 
 namespace BeerTender\model;
 
+use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\Entity;
+use Doctrine\ORM\Mapping\JoinColumn;
+use Doctrine\ORM\Mapping\OneToMany;
 use Doctrine\ORM\Mapping\Table;
 
 /**
@@ -46,6 +49,13 @@ class Product extends DomainObject
      * @var String
      */
     private $img;
+
+
+    /**
+     * @ManyToOne(targetEntity="ProductCategory")
+     * @var ProductCategory
+     */
+    private $productCategory;
 
 
 
@@ -122,7 +132,18 @@ class Product extends DomainObject
         $this->img = $img;
     }
 
+    /**
+     * @return ProductCategory
+     */
+    public function getProductCategory() {
+        return $this->productCategory;
+    }
 
-    
-    
+    /**
+     * @param ProductCategory $productCategory
+     */
+    public function setProductCategory($productCategory) {
+        $this->productCategory = $productCategory;
+    }
+
 }
