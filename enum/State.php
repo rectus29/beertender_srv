@@ -17,19 +17,16 @@ namespace BeerTender;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\Type;
 
-class State extends Type
-{
+class State extends Type {
     const DISABLED = 0;
     const ENABLE = 1;
     const DELETED = 2;
 
-    public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform)
-    {
+    public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform) {
         // TODO: Implement getSQLDeclaration() method.
     }
 
-    public function getName()
-    {
+    public function getName() {
         return "enumState";
     }
 

@@ -24,7 +24,7 @@ use Doctrine\ORM\Mapping\Table;
 class Product extends DomainObject
 {
     /**
-     * @Column(type="String", nullable=false)
+     * @Column(type="string", nullable=false)
      * @var String
      */
     private $name;

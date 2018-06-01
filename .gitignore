@@ -3,6 +3,7 @@
 /gulpfile.js
 /package.json
 
+/vendor/
 *.iml
 
 

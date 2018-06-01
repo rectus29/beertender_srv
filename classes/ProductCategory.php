@@ -23,7 +23,7 @@ use Doctrine\ORM\Mapping\ManyToOne;
 class ProductCategory extends DomainObject
 {
     /**
-     * @Column(type="String", nullable=false)
+     * @Column(type="string", nullable=false)
      * @var String
      */
     private $name;
