@@ -7,15 +7,15 @@
 /*     | | \ \  __/ (__| |_| |_| \__ \  / /_   / /     */
 /*     |_|  \_\___|\___|\__|\__,_|___/ |____| /_/      */
 /*                                                     */
-/*                Date: 04/01/2018 12:11                */
+/*                Date: 06/06/2018 14:42                */
 /*                 All right reserved                  */
 /*-----------------------------------------------------*/
 
 namespace BeerTender\Enum;
 
-class State {
-    const DISABLED = 0;
-    const ENABLE = 1;
-    const DELETED = 2;
 
+class Method {
+    const GET = 'GET';
+    const POST = 'POST';
+    const DELETE = 'DELETE';
 }

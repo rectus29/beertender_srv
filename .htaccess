@@ -1,15 +1,27 @@
-Errordocument 401 /reservresto/web/error/404.php
-Errordocument 403 /reservresto/web/error/404.php
-Errordocument 404 /reservresto/web/error/404.php
-Errordocument 500 /reservresto/web/error/404.php
+#Errordocument 401 /reservresto/web/error/404.php
+#Errordocument 403 /reservresto/web/error/404.php
+#Errordocument 404 /reservresto/web/error/404.php
+#Errordocument 500 /reservresto/web/error/404.php
 
 Options -Indexes
 
-#RewriteEngine on
-#RewriteBase web/
-#Options +FollowSymlinks
+RewriteEngine on
+Options +FollowSymlinks
+RewriteBase /api
 
-#RewriteRule ^web/(.*)$ web/index.php?parsedurl=$1 [L,QSA]
+RewriteCond %{REQUEST_URI} !api/index.php
+
+RewriteCond %{REQUEST_METHOD} GET
+RewriteRule ^api/(.*)/(.*) get.php?object=$1&objectId=$2 [L,QSA]
+
+RewriteCond %{REQUEST_METHOD} POST
+RewriteRule ^api/(.*)/(.*) post.php?object=$1&objectId=$2 [L,QSA]
+
+RewriteCond %{REQUEST_METHOD} DELETE
+RewriteRule ^api/(.*)/(.*) delete.php?object=$1&objectId=$2 [L,QSA]
+
+RewriteCond %{REQUEST_METHOD} CONNECT
+RewriteRule ^api/(.*)/(.*) connect.php?object=$1&objectId=$2 [L,QSA]
 
 #RewriteCond %{HTTP_REFERER} !^$
 #RewriteCond %{REQUEST_FILENAME} (.*)\.(jpg|png)$

@@ -20,7 +20,7 @@ use Doctrine\ORM\Mapping\Table;
  * @Entity
  * @Table(name="app_config")
  */
-class Config extends Address
+class Config extends DomainObject
 {
 
     /**

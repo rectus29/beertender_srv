@@ -7,15 +7,26 @@
 /*     | | \ \  __/ (__| |_| |_| \__ \  / /_   / /     */
 /*     |_|  \_\___|\___|\__|\__,_|___/ |____| /_/      */
 /*                                                     */
-/*                Date: 04/01/2018 12:11                */
+/*                Date: 06/06/2018 15:18                */
 /*                 All right reserved                  */
 /*-----------------------------------------------------*/
 
-namespace BeerTender\Enum;
+use BeerTender\enum\RequestState;
+use BeerTender\model\Order;
+use BeerTender\model\Product;
 
-class State {
-    const DISABLED = 0;
-    const ENABLE = 1;
-    const DELETED = 2;
+require("apiInclude.php");
 
+if ($_GET['object'] == Product::class) {
+    $
+
+
+
+} else if ($_GET['object'] == Order::class){
+
+} else {
+    header("HTTP/1.1 ". RequestState::HTTP_InternalServerError." ".RequestState::getMessage(RequestState::HTTP_InternalServerError));
+    header("Content-Type:".$apiRequest->getContentType());
+    echo "";
+    exit;
 }

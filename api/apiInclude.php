@@ -11,19 +11,19 @@
 /*                 All right reserved                  */
 /*-----------------------------------------------------*/
 
+use BeerTender\Api\Core\ApiRequest;
 use BeerTender\manager\SecurityManager;
 use BeerTender\model;
 use BeerTender\models\dao\ConfigDao;
 
+
 error_reporting(E_ALL);
-
 require_once('../config/global.php');
-require_once('../vendor/phpmailer/phpmailer/PHPMailerAutoload.php');
-
-$configDao = new ConfigDao($em);
-
-//here check connection to dbserver
+//here check connection to dbserver //TODO check usage of this
 $GLOBALS['maintenance'] = !$em->getConnection()->ping();
+
+//process incoming request
+$apiRequest = new ApiRequest($_REQUEST);
 
 //check maintenance mod
 if ($configDao->getByKey('serverState') != null && $configDao->getByKey('serverState')->getValue() == '0' && !SecurityManager::get()->isAdmin($_SESSION)){
@@ -31,19 +31,8 @@ if ($configDao->getByKey('serverState') != null && $configDao->getByKey('serverS
 }
 
 
-//try save here 
-$product = new model\Product("test1");
-$gDao->save($product);
 
 
 
 
-?>
- 
-
-
-
-
-<?php
 $em->getConnection()->close();
-
