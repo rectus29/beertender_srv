@@ -8,13 +8,13 @@
 
   "autoload": {
     "psr-4": {
+      "BeerTender\\": "",
+      "BeerTender\\core": "core/",
       "BeerTender\\model\\": "classes/",
       "BeerTender\\manager\\": "manager/",
-      "BeerTender\\type\\": "type/",
       "BeerTender\\enum\\": "enum/",
       "BeerTender\\models\\dao\\": "models/",
-      "BeerTender\\utils\\": "utils/",
-      "BeerTender\\": ""
+      "BeerTender\\utils\\": "utils/"
     }
   }
 }
