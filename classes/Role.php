@@ -51,7 +51,7 @@ class Role extends DomainObject
 
     /**
      * @ManyToMany(targetEntity="Permission")
-     * @JoinTable(name="role_permission")
+     * @JoinTable(name="app_role_permission")
      * @var Permission[]
      */
     private $permissions = array();

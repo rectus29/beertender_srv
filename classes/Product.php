@@ -17,6 +17,8 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\Entity;
 use Doctrine\ORM\Mapping\JoinColumn;
+use Doctrine\ORM\Mapping\JoinTable;
+use Doctrine\ORM\Mapping\ManyToMany;
 use Doctrine\ORM\Mapping\OneToMany;
 use Doctrine\ORM\Mapping\Table;
 
@@ -52,10 +54,10 @@ class Product extends DomainObject
 
 
     /**
-     * @ManyToOne(targetEntity="ProductCategory")
-     * @var ProductCategory
+     * @ManyToMany(targetEntity="Category", mappedBy="products")
+     * @var Category[]
      */
-    private $productCategory;
+    private $productCategoryList;
 
 
 
@@ -133,17 +135,17 @@ class Product extends DomainObject
     }
 
     /**
-     * @return ProductCategory
+     * @return Category
      */
-    public function getProductCategory() {
-        return $this->productCategory;
+    public function getProductCategoryList() {
+        return $this->productCategoryList;
     }
 
     /**
-     * @param ProductCategory $productCategory
+     * @param Category $productCategoryList
      */
-    public function setProductCategory($productCategory) {
-        $this->productCategory = $productCategory;
+    public function setProductCategoryList($productCategoryList) {
+        $this->productCategoryList = $productCategoryList;
     }
 
 }

@@ -12,7 +12,7 @@ namespace BeerTender\model;
 /*                 All right reserved                  */
 /*-----------------------------------------------------*/
 
-use BeerTender\State;
+use BeerTender\Enum\State;
 use DateTime;
 use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\GeneratedValue;
@@ -24,6 +24,7 @@ use Doctrine\ORM\Mapping\MappedSuperclass;
  */
 class DomainObject
 {
+    use DomainObjectTrait;
     /**
      * @Id
      * @Column(type="integer")

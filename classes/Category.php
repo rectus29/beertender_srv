@@ -16,15 +16,15 @@ namespace BeerTender\model;
 
 use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\Entity;
-use Doctrine\ORM\Mapping\OneToMany;
+use Doctrine\ORM\Mapping\JoinTable;
+use Doctrine\ORM\Mapping\ManyToMany;
 use Doctrine\ORM\Mapping\Table;
 
 /**
  * @Entity
- * @Table(name="app_productcategory")
+ * @Table(name="app_category")
  */
-class ProductCategory extends DomainObject
-{
+class Category extends DomainObject {
     /**
      * @Column(type="string", nullable=false)
      * @var String
@@ -38,16 +38,16 @@ class ProductCategory extends DomainObject
     private $desc;
 
     /**
-     * @OneToMany(targetEntity="Product", mappedBy="productCategory", )
+     * @ManyToMany(targetEntity="Product", inversedBy="productCategoryList")
+     * @JoinTable(name="app_product_category" )
      * @var Product[]
      */
     private $products;
 
     /**
-     * Product constructor.
+     * Category constructor.
      */
-    public function __construct()
-    {
+    public function __construct() {
         parent::__construct();
         return $this;
     }

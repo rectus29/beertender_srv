@@ -61,7 +61,4 @@ $config = Setup::createAnnotationMetadataConfiguration(array(__DIR__ . "/../clas
 $em = EntityManager::create($conn, $config);
 $securityMananger = SecurityManager::init($em);
 $mailManager = MailManager::init($em, $mailConfig);
-//init basic dao service
-$genericDao = new GenericDao($em);
-$configDao = new ConfigDao($em);
 
