@@ -26,7 +26,9 @@ if ($_GET['object'] == "Product") {
     $object = $productDao->findByPrimaryKey(Product::class, $targetObjectId);
     header("HTTP/1.1 ".RequestState::HTTP_OK." ".RequestState::getMessage(RequestState::HTTP_OK));
     header("Content-Type:".$apiRequest->getContentType());
-    echo json_encode($object->exportTo('json'));
+    var_dump($object);
+    var_dump(json_encode($object));
+    echo json_encode($object);
     //echo json_encode($object);
     exit;
 } else if ($_GET['object'] == Order::class){
@@ -39,6 +41,6 @@ if ($_GET['object'] == "Product") {
 } else {
     header("HTTP/1.1 ". RequestState::HTTP_InternalServerError." ".RequestState::getMessage(RequestState::HTTP_InternalServerError));
     header("Content-Type:".$apiRequest->getContentType());
-    echo "500";
+    echo "";
     exit;
 }
