@@ -15,8 +15,7 @@ namespace BeerTender\Model;
 
 
 trait DomainObjectTrait {
-    public static function getClassName()
-    {
-        return __CLASS__;
+    public static function getClassName() {
+        return join('',array_slice(explode('\\', static::class), -1));;
     }
 }

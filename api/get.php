@@ -17,10 +17,7 @@ use BeerTender\Model\Product;
 use BeerTender\Models\Dao\ProductDao;
 
 require("apiInclude.php");
-
-echo $_GET['object'] == "product";
-
-if ($_GET['object'] == "Product") {
+if ($_GET['object'] == Product::getClassName()) {
     $productDao = new ProductDao($em);
     $targetObjectId = $_GET['objectId'];
     /**@var $object Product*/
@@ -30,10 +27,10 @@ if ($_GET['object'] == "Product") {
     echo json_encode($object->toArray());
     //echo json_encode($object);
     exit;
-} else if ($_GET['object'] == Order::class){
+} else if ($_GET['object'] == Order::getClassName()){
     $targetObjectId = $_GET['objectId'];
     $object = $genericDao->findByPrimaryKey(Product::class, $targetObjectId);
-    header("HTTP/1.1 ".RequestState::HTTP_OK." ".RequestState::getMessage(HTTP_OK));
+    header("HTTP/1.1 ".RequestState::HTTP_OK." ".RequestState::getMessage(RequestState::HTTP_OK));
     header("Content-Type:".$apiRequest->getContentType());
     echo json_encode ($object);
     exit;
