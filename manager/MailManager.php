@@ -1,5 +1,5 @@
 <?php
-namespace BeerTender\manager;
+namespace BeerTender\Manager;
     /*-----------------------------------------------------*/
     /*      _____           _               ___   ___      */
     /*     |  __ \         | |             |__ \ / _ \     */

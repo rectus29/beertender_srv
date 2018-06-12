@@ -1,5 +1,5 @@
 <?php
-namespace BeerTender\model;
+namespace BeerTender\Model;
 /*-----------------------------------------------------*/
 /*      _____           _               ___   ___      */
 /*     |  __ \         | |             |__ \ / _ \     */

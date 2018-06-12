@@ -1,6 +1,6 @@
 <?php
 
-namespace BeerTender\models\dao;
+namespace BeerTender\Models\Dao;
 /*-----------------------------------------------------*/
 /*      _____           _               ___   ___      */
 /*     |  __ \         | |             |__ \ / _ \     */

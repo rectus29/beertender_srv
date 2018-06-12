@@ -13,11 +13,8 @@
 
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Tools\Setup;
-use BeerTender\manager\MailManager;
-use BeerTender\manager\SecurityManager;
-use BeerTender\model;
-use BeerTender\models\dao\ConfigDao;
-use BeerTender\models\dao\GenericDao;
+use BeerTender\Manager\MailManager;
+use BeerTender\Manager\SecurityManager;
 
 //enable devmode
 define('DEV_MOD', true);
@@ -34,7 +31,7 @@ if (!file_exists(FILE_DIR)) {
     mkdir(FILE_DIR);
 }
 require_once ROOT_DIR . "/vendor/autoload.php";
-require_once ROOT_DIR . "/vendor/phpmailer/phpmailer/PHPMailerAutoload.php";
+//require_once ROOT_DIR . "/vendor/phpmailer/phpmailer/PHPMailerAutoload.php";
 
 // database configuration parameters
 $conn = array(
@@ -60,5 +57,5 @@ $mailConfig = [
 $config = Setup::createAnnotationMetadataConfiguration(array(__DIR__ . "/../classes/"), true);
 $em = EntityManager::create($conn, $config);
 $securityMananger = SecurityManager::init($em);
-$mailManager = MailManager::init($em, $mailConfig);
+//$mailManager = MailManager::init($em, $mailConfig);
 

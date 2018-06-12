@@ -1,5 +1,5 @@
 <?php
-namespace BeerTender\models\dao;
+namespace BeerTender\Models\Dao;
     /*-----------------------------------------------------*/
     /*      _____           _               ___   ___      */
     /*     |  __ \         | |             |__ \ / _ \     */
@@ -13,7 +13,7 @@ namespace BeerTender\models\dao;
 /*-----------------------------------------------------*/
 
 use Doctrine\ORM\EntityManager;
-use BeerTender\model\Config;
+use BeerTender\Model\Config;
 
 class ConfigDao extends GenericDao
 {

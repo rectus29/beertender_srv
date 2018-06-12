@@ -11,10 +11,10 @@
 /*                 All right reserved                  */
 /*-----------------------------------------------------*/
 
-use BeerTender\enum\RequestState;
-use BeerTender\model\Order;
-use BeerTender\model\Product;
-use BeerTender\models\dao\ProductDao;
+use BeerTender\Enum\RequestState;
+use BeerTender\Model\Order;
+use BeerTender\Model\Product;
+use BeerTender\Models\Dao\ProductDao;
 
 require("apiInclude.php");
 
@@ -23,12 +23,11 @@ echo $_GET['object'] == "product";
 if ($_GET['object'] == "Product") {
     $productDao = new ProductDao($em);
     $targetObjectId = $_GET['objectId'];
+    /**@var $object Product*/
     $object = $productDao->findByPrimaryKey(Product::class, $targetObjectId);
     header("HTTP/1.1 ".RequestState::HTTP_OK." ".RequestState::getMessage(RequestState::HTTP_OK));
     header("Content-Type:".$apiRequest->getContentType());
-    var_dump($object);
-    var_dump(json_encode($object));
-    echo json_encode($object);
+    echo json_encode($object->toArray());
     //echo json_encode($object);
     exit;
 } else if ($_GET['object'] == Order::class){

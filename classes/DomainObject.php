@@ -1,5 +1,5 @@
 <?php
-namespace BeerTender\model;
+namespace BeerTender\Model;
 /*-----------------------------------------------------*/
 /*      _____           _               ___   ___      */
 /*     |  __ \         | |             |__ \ / _ \     */
@@ -18,13 +18,16 @@ use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\GeneratedValue;
 use Doctrine\ORM\Mapping\Id;
 use Doctrine\ORM\Mapping\MappedSuperclass;
+use Indaxia\OTR\ITransformable;
+use Indaxia\OTR\Traits\Transformable;
 
 /**
  * @MappedSuperclass
  */
-class DomainObject
+class DomainObject implements ITransformable
 {
     use DomainObjectTrait;
+    use Transformable;
     /**
      * @Id
      * @Column(type="integer")

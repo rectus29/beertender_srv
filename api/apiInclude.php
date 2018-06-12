@@ -12,14 +12,13 @@
 /*-----------------------------------------------------*/
 
 use BeerTender\Api\Core\ApiRequest;
-use BeerTender\manager\SecurityManager;
-use BeerTender\models\dao\ConfigDao;
-use BeerTender\models\dao\GenericDao;
+use BeerTender\Manager\SecurityManager;
+use BeerTender\Models\Dao\ConfigDao;
+use BeerTender\Models\Dao\GenericDao;
 
 
 error_reporting(E_ALL);
 require_once('../config/global.php');
-//here check connection to dbserver //TODO check usage of this
 $GLOBALS['maintenance'] = !$em->getConnection()->ping();
 
 //init basic dao service

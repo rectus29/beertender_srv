@@ -11,7 +11,7 @@
 /*                 All right reserved                  */
 /*-----------------------------------------------------*/
 
-namespace BeerTender\model;
+namespace BeerTender\Model;
 
 
 use Doctrine\ORM\Mapping\Entity;

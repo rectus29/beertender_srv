@@ -13,7 +13,7 @@
 
 namespace BeerTender\Api\Core;
 
-use BeerTender\enum\Method;
+use BeerTender\Enum\Method;
 
 class ApiRequest {
 
