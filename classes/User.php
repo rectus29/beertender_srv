@@ -97,20 +97,16 @@ class User extends DomainObject
      * @param String $firstName
      * @param String $lastName
      * @param String $mail
-     * @param String $salt
      * @param String $password
      * @param String $phoneNumber
      * @param Role $role
-     * @param Company $company
-     * @param bool $optIn
      */
-    public function __construct($firstName = null, $lastName = null, $mail = null, $salt = null, $password = null, $phoneNumber = null, Role $role = null, $address = null)
-    {
+    public function __construct($firstName = null, $lastName = null, $mail = null, $password = null, $phoneNumber = null, Role $role = null, $address = null){
         parent::__construct();
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->mail = $mail;
-        $this->salt = ($salt == null) ? str_replace('+', '.', base64_encode(mcrypt_create_iv(22, MCRYPT_DEV_URANDOM))) : $salt;
+        $this->salt = str_replace('+', '.', base64_encode(mcrypt_create_iv(22, MCRYPT_DEV_URANDOM)));
         $this->password = $password;
         $this->phoneNumber = $phoneNumber;
         $this->role = $role;
